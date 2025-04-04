@@ -1,5 +1,11 @@
-import streamlit as st
+__import__('pysqlite3')
+import sys
+sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 import chromadb
+import streamlit as st
+import sys
+import os
+import numpy as np
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
